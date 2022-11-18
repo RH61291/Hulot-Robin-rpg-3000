@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad1b186f-6324-4ce3-90e3-d61e1f7f8aca" name="Changes" comment="change" />
+    <list default="true" id="ad1b186f-6324-4ce3-90e3-d61e1f7f8aca" name="Changes" comment="change">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,6 +147,8 @@
       <workItem from="1668530247397" duration="74000" />
       <workItem from="1668697611638" duration="5192000" />
       <workItem from="1668755945592" duration="594000" />
+      <workItem from="1668756625174" duration="816000" />
+      <workItem from="1668758756256" duration="3178000" />
     </task>
     <task id="LOCAL-00001" summary="2nd">
       <created>1668172244418</created>
