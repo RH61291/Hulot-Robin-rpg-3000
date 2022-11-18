@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ControllerChangeScene">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView id="brique" fitHeight="400.0" fitWidth="620.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../picture/fond%20brique.png" />
+               </image>
+            </ImageView>
+            <Text fill="#a63434" layoutX="100.0" layoutY="121.0" stroke="WHITE" strokeType="OUTSIDE" text="Enter the dungeon" textAlignment="CENTER" wrappingWidth="399.73675537109375">
+               <font>
+                  <Font name="Bell MT" size="56.0" />
+               </font>
+            </Text>
+            <Button fx:id="bouton1" layoutX="250.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#enter" prefHeight="32.0" prefWidth="99.0" text="Commencer">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
