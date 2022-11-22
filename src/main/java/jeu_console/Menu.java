@@ -35,27 +35,27 @@ public class Menu {
         while (true) {
             if (classe.equals("Healer")) {
 
-                System.out.println("Quelle action doit faire " + classe + " " + nom + " "+ hero.getCurrent_magie()+" mana restant:\n Soigner(2 mana), Soin de groupe(3 mana)," +
-                        " Réssusciter(4 mana), Manger, Boire une potion");
+                System.out.println("Quelle action doit faire " + classe + " " + nom + " "+ hero.getCurrent_magie()+" mana restant:\nSoigner(2 mana), Soin de groupe(3 mana)," +
+                        " Réssusciter(4 mana), Manger, Boire une potion, Passer");
             }
             if (classe.equals("Mage")) {
 
-                System.out.println("Quelle action doit faire " + classe + " " + nom +" "+ hero.getCurrent_magie()+" mana restant:\n Boule de feu(2 mana), Lame d'eau(2 mana)," +
-                        "Séisme(2 mana), Tranche herbe(2 mana), Manger, Boire une potion");
+                System.out.println("Quelle action doit faire " + classe + " " + nom +" "+ hero.getCurrent_magie()+" mana restant:\nBoule de feu(2 mana), Lame d'eau(2 mana)," +
+                        "Séisme(2 mana), Tranche herbe(2 mana), Manger, Boire une potion, Passer");
             }
             if (classe.equals("Hunter")) {
 
-                System.out.println("Quelle action doit faire " + classe + " " + nom + "?:\n Tir, Attaque au couteau, Manger, Boire une potion");
+                System.out.println("Quelle action doit faire " + classe + " " + nom + "?:\nTir, Attaque au couteau, Manger, Boire une potion, Passer");
             }
             if (classe.equals("Warrior")) {
 
-                System.out.println("Quelle action doit faire " + classe + " " + nom + "?:\n Attaque, Berserk (-50% de vie), Manger, Boire une potion");
+                System.out.println("Quelle action doit faire " + classe + " " + nom + "?:\nAttaque, Berserk (-50% de vie, x2 dégat), Manger, Boire une potion, Passer");
             }
 
             choix = br.readLine();
             //si choix valide alors break
 
-            if (choix.equals("Attaque") || choix.equals("Attaque au couteau") ||choix.equals("Berserk")) {
+            if (choix.equals("Attaque") || choix.equals("Attaque au couteau") ||choix.equals("Berserk") || choix.equals("Passer")) {
 
                 break;
             }
@@ -188,6 +188,9 @@ public class Menu {
 
             manger(hero);
             System.out.println("----------------------------\n");
+        }
+
+        if (choix.equals("Passer")){
         }
 
         if (choix.equals("Boire une potion")) {

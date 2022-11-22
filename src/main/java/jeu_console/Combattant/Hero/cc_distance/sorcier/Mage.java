@@ -2,7 +2,10 @@ package jeu_console.Combattant.Hero.cc_distance.sorcier;
 
 
 import jeu_console.Combattant.Hero.Hero;
+import jeu_console.Combattant.Hero.cc_distance.Warrior;
 import jeu_console.Item.arme_potion.Weapon;
+import jeu_console.Item.arme_potion.conso.Potion;
+import jeu_console.Item.arme_potion.consommable;
 
 import java.util.Random;
 
@@ -128,5 +131,52 @@ public class Mage extends Hero {
         return tab_dégat;
     }
 
+    public static Hero gMage(Hero[] heros, Weapon[] liste_arme, int i){
+        heros[i] = new Mage();
+        heros[i].setHealth(100);
+        heros[i].setChance(20);
+        heros[i].setCurrent_health(heros[i].getHealth());
+        heros[i].setDegat_base(10);
+        heros[i].setDef(10);
+        heros[i].setCurrent_def(heros[i].getDef());
+        heros[i].setDegat_fond(heros[i].getDegat_base());
+        heros[i].setMagie(10);
+        heros[i].setCurrent_magie(heros[i].getMagie());
+        heros[i].setType("feu");
+
+        heros[i].initialise_inventory();
+        liste_arme[i] = new Weapon();
+        liste_arme[i].setBonus_degat(10);
+        liste_arme[i].setName("grimoire");
+        liste_arme[i].setType("feu");
+        liste_arme[i].setType_degat(5);
+        heros[i].addWeapon(liste_arme[i]);
+
+        consommable food = new consommable();
+        food.setName("boeuf");
+        food.setClasse("Food");
+        food.setSoin(25);
+        heros[i].addConsumable(food);
+
+        Potion potion = new Potion();
+        potion.setSoin(40);
+        potion.setClasse("Potion");
+        potion.setName("potion de vie");
+
+        Potion potion1 = new Potion();
+        potion1.setMana(10);
+        potion1.setClasse("Potion");
+        potion1.setName("potion de mana");
+
+        Potion potion2 = new Potion();
+        potion2.setBonus_degat(10);
+        potion2.setClasse("Potion");
+        potion2.setName("potion de dégat");
+
+        heros[i].addConsumable(potion);
+        heros[i].addConsumable(potion1);
+        heros[i].addConsumable(potion2);
+        return heros[i];
+    }
 
 }

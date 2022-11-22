@@ -18,6 +18,10 @@ import java.util.Scanner;
 
 import static jeu_console.Combattant.Combattant.receiveDamage;
 import static jeu_console.Combattant.Enemy.*;
+import static jeu_console.Combattant.Hero.cc_distance.Hunter.gHunter;
+import static jeu_console.Combattant.Hero.cc_distance.Warrior.gWarrior;
+import static jeu_console.Combattant.Hero.cc_distance.sorcier.Healer.gHealer;
+import static jeu_console.Combattant.Hero.cc_distance.sorcier.Mage.gMage;
 
 public class Game {
     private static final Scanner sc = new Scanner(System.in);
@@ -84,194 +88,19 @@ public class Game {
             noms_heros[i] = sc.nextLine();
 
             if (classe_heros[i].equals("Warrior")) {
-                heros[i] = new Warrior();
-                heros[i].setChance(10);
-                heros[i].setDegat_base(20);
-                heros[i].setDegat_fond(heros[i].getDegat_base());
-                heros[i].setHealth(200);
-                heros[i].setCurrent_health(heros[i].getHealth());
-                heros[i].setDef(40);
-                heros[i].setCurrent_def(heros[i].getDef());
-                heros[i].setType("terre");
-
-
-                //initialisation de l'inventaire (arme)
-                heros[i].initialise_inventory();
-                liste_arme[i] = new Weapon();
-                liste_arme[i].setBonus_degat(10);
-                liste_arme[i].setName("lame d'aventurier");
-                liste_arme[i].setType("terre");
-                liste_arme[i].setType_degat(5);
-                heros[i].addWeapon(liste_arme[i]);
-
-                //initialisation de l'inventaire potion
-                consommable food = new consommable();
-                food.setName("boeuf");
-                food.setClasse("Food");
-                food.setSoin(25);
-                heros[i].addConsumable(food);
-
-                Potion potion = new Potion();
-                potion.setSoin(40);
-                potion.setClasse("Potion");
-                potion.setName("potion de vie");
-
-                Potion potion1 = new Potion();
-                potion1.setBonus_def(10);
-                potion1.setClasse("Potion");
-                potion1.setName("potion d'armure");
-
-                Potion potion2 = new Potion();
-                potion2.setBonus_degat(10);
-                potion2.setClasse("Potion");
-                potion2.setName("potion de dégat");
-
-                heros[i].addConsumable(potion);
-                heros[i].addConsumable(potion1);
-                heros[i].addConsumable(potion2);
-
-
+                heros[i]=gWarrior(heros,liste_arme,i);
             }
 
             if (classe_heros[i].equals("Hunter")) {
-                heros[i] = new Hunter();
-                heros[i].setHealth(150);
-                heros[i].setChance(50);
-                heros[i].setCurrent_health(heros[i].getHealth());
-                heros[i].setDegat_base(30);
-                heros[i].setDef(20);
-                heros[i].setCurrent_def(heros[i].getDef());
-                heros[i].setDegat_fond(heros[i].getDegat_base());
-                heros[i].setNbfleche(15);
-                heros[i].setType("feuille");
-
-                heros[i].initialise_inventory();
-                liste_arme[i] = new Weapon();
-                liste_arme[i].setBonus_degat(10);
-                liste_arme[i].setName("arc d'aventurier");
-                liste_arme[i].setType("feuille");
-                liste_arme[i].setType_degat(5);
-                heros[i].addWeapon(liste_arme[i]);
-
-                consommable food = new consommable();
-                food.setName("boeuf");
-                food.setClasse("Food");
-                food.setSoin(25);
-                heros[i].addConsumable(food);
-
-                Potion potion = new Potion();
-                potion.setSoin(40);
-                potion.setClasse("Potion");
-                potion.setName("potion de vie");
-
-                Potion potion1 = new Potion();
-                potion1.setBonus_def(10);
-                potion1.setClasse("Potion");
-                potion1.setName("potion d'armure");
-
-                Potion potion2 = new Potion();
-                potion2.setBonus_degat(10);
-                potion2.setClasse("Potion");
-                potion2.setName("potion de dégat");
-
-                heros[i].addConsumable(potion);
-                heros[i].addConsumable(potion1);
-                heros[i].addConsumable(potion2);
+                heros[i]=gHunter(heros,liste_arme,i);
             }
 
             if (classe_heros[i].equals("Healer")) {
-                heros[i] = new Healer();
-                heros[i].setHealth(100);
-                heros[i].setChance(50);
-                heros[i].setCurrent_health(heros[i].getHealth());
-                heros[i].setSoin_base(40);
-                heros[i].setDef(10);
-                heros[i].setCurrent_def(heros[i].getDef());
-                heros[i].setDegat_fond(heros[i].getDegat_base());
-                heros[i].setMagie(20);
-                heros[i].setCurrent_magie(heros[i].getMagie());
-                heros[i].setType("eau");
-
-                heros[i].initialise_inventory();
-                liste_arme[i] = new Weapon();
-                liste_arme[i].setBonus_soin(10);
-                liste_arme[i].setName("baton d'aventurier");
-                liste_arme[i].setType("eau");
-                liste_arme[i].setType_degat(5);
-                heros[i].addWeapon(liste_arme[i]);
-
-                consommable food = new consommable();
-                food.setName("boeuf");
-                food.setClasse("Food");
-                food.setSoin(25);
-                heros[i].addConsumable(food);
-
-                Potion potion = new Potion();
-                potion.setSoin(40);
-                potion.setClasse("Potion");
-                potion.setName("potion de vie");
-
-                Potion potion1 = new Potion();
-                potion1.setMana(10);
-                potion1.setClasse("Potion");
-                potion1.setName("potion de mana");
-
-                Potion potion2 = new Potion();
-                potion2.setBonus_degat(10);
-                potion2.setClasse("Potion");
-                potion2.setName("potion de dégat");
-
-                heros[i].addConsumable(potion);
-                heros[i].addConsumable(potion1);
-                heros[i].addConsumable(potion2);
-
+                heros[i]=gHealer(heros,liste_arme,i);
             }
 
             if (classe_heros[i].equals("Mage")) {
-                heros[i] = new Mage();
-                heros[i].setHealth(100);
-                heros[i].setChance(20);
-                heros[i].setCurrent_health(heros[i].getHealth());
-                heros[i].setDegat_base(10);
-                heros[i].setDef(10);
-                heros[i].setCurrent_def(heros[i].getDef());
-                heros[i].setDegat_fond(heros[i].getDegat_base());
-                heros[i].setMagie(10);
-                heros[i].setCurrent_magie(heros[i].getMagie());
-                heros[i].setType("feu");
-
-                heros[i].initialise_inventory();
-                liste_arme[i] = new Weapon();
-                liste_arme[i].setBonus_degat(10);
-                liste_arme[i].setName("grimoire");
-                liste_arme[i].setType("feu");
-                liste_arme[i].setType_degat(5);
-                heros[i].addWeapon(liste_arme[i]);
-
-                consommable food = new consommable();
-                food.setName("boeuf");
-                food.setClasse("Food");
-                food.setSoin(25);
-                heros[i].addConsumable(food);
-
-                Potion potion = new Potion();
-                potion.setSoin(40);
-                potion.setClasse("Potion");
-                potion.setName("potion de vie");
-
-                Potion potion1 = new Potion();
-                potion1.setMana(10);
-                potion1.setClasse("Potion");
-                potion1.setName("potion de mana");
-
-                Potion potion2 = new Potion();
-                potion2.setBonus_degat(10);
-                potion2.setClasse("Potion");
-                potion2.setName("potion de dégat");
-
-                heros[i].addConsumable(potion);
-                heros[i].addConsumable(potion1);
-                heros[i].addConsumable(potion2);
+                heros[i]=gMage(heros,liste_arme,i);
             }
 
         }//attribution classe et nom

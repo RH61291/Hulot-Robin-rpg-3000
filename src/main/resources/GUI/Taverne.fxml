@@ -20,7 +20,7 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView id="taverne" fitHeight="400.0" fitWidth="661.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="taverne" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../picture/taverne.png" />
                </image>
@@ -30,27 +30,97 @@
                   <Font name="Bell MT" size="43.0" />
                </font>
             </Text>
-            <Text fx:id="énoncé" layoutX="60.0" layoutY="194.0" stroke="WHITE" strokeType="OUTSIDE" text="Veuillez choisir le nombre de vos héros" textAlignment="CENTER" wrappingWidth="478.13677978515625">
+            <Text fx:id="énoncé1" layoutX="60.0" layoutY="194.0" stroke="WHITE" strokeType="OUTSIDE" text="Veuillez choisir le nombre de vos héros" textAlignment="CENTER" wrappingWidth="478.13677978515625">
                <font>
                   <Font name="Bell MT" size="22.0" />
                </font>
             </Text>
-            <Button fx:id="bouton1" layoutX="99.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#choix1" text="1 héro">
+            <Button fx:id="bouton1" layoutX="15.0" layoutY="267.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#choix1" prefHeight="35.0" prefWidth="75.0" text="1 héro">
                <font>
-                  <Font name="Bell MT" size="18.0" />
+                  <Font name="Bell MT" size="16.0" />
                </font></Button>
-            <Button fx:id="bouton2" layoutX="219.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#choix2" text="2 héros">
+            <Button fx:id="bouton2" layoutX="170.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#choix2" prefHeight="35.0" prefWidth="85.0" text="2 héros">
                <font>
-                  <Font name="Bell MT" size="18.0" />
+                  <Font name="Bell MT" size="16.0" />
                </font></Button>
-            <Button fx:id="bouton3" layoutX="337.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#choix3" text="3 héros">
+            <Button fx:id="bouton3" layoutX="340.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#choix3" prefHeight="35.0" prefWidth="85.0" text="3 héros">
                <font>
-                  <Font name="Bell MT" size="18.0" />
+                  <Font name="Bell MT" size="16.0" />
                </font></Button>
-            <Button fx:id="bouton4" layoutX="449.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#choix4" text="4 héros">
+            <Button fx:id="bouton4" layoutX="500.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#choix4" prefHeight="35.0" prefWidth="85.0" text="4 héros">
                <font>
-                  <Font name="Bell MT" size="18.0" />
+                  <Font name="Bell MT" size="16.0" />
                </font></Button>
+            <Text fx:id="énoncé2" layoutX="161.0" layoutY="194.0" stroke="#e4e3e3" strokeType="OUTSIDE" text="Veuillez choisr leurs classes" visible="false" AnchorPane.topAnchor="173.80859375">
+               <font>
+                  <Font name="Bell MT" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="GWarrior" layoutX="15.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#genWarrior" prefHeight="30.0" prefWidth="85.0" text="Warrior" visible="false">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="GHealer" layoutX="170.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#genHealer" prefHeight="30.0" prefWidth="85.0" text="Healer" visible="false">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="GHunter" layoutX="340.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#genHunter" prefHeight="30.0" prefWidth="85.0" text="Hunter" visible="false">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="GMAge" layoutX="500.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#genMage" prefHeight="30.0" prefWidth="85.0" text="Mage" visible="false">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font>
+            </Button>
+            <Text fx:id="sur1" layoutX="300.0" layoutY="220.0" stroke="#fcfafa" strokeType="OUTSIDE" text="/1" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="sur2" layoutX="300.0" layoutY="220.0" stroke="#fcfafa" strokeType="OUTSIDE" text="/2" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="sur3" layoutX="300.0" layoutY="220.0" stroke="#f7f4f4" strokeType="OUTSIDE" text="/3" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="sur4" layoutX="300.0" layoutY="220.0" stroke="#faf5f5" strokeType="OUTSIDE" text="/4" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="un" layoutX="295.0" layoutY="220.0" stroke="#f7f4f4" strokeType="OUTSIDE" text="1" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="deux" layoutX="295.0" layoutY="220.0" stroke="#fcfbfb" strokeType="OUTSIDE" text="2" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="trois" layoutX="295.0" layoutY="220.0" stroke="#faf8f8" strokeType="OUTSIDE" text="3" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="quatre" layoutX="295.0" layoutY="220.0" stroke="#faf8f8" strokeType="OUTSIDE" text="4" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="sortieTav" layoutX="205.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#entDungeon" prefHeight="46.0" prefWidth="179.0" text="Continuer" visible="false">
+               <font>
+                  <Font name="Bell MT" size="24.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

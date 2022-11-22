@@ -3,6 +3,8 @@ package jeu_console.Combattant.Hero.cc_distance;
 
 import jeu_console.Combattant.Hero.Hero;
 import jeu_console.Item.arme_potion.Weapon;
+import jeu_console.Item.arme_potion.conso.Potion;
+import jeu_console.Item.arme_potion.consommable;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,10 +13,6 @@ import lombok.ToString;
 import java.util.Random;
 import java.util.Scanner;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
 
 public class Hunter extends Hero {
     Scanner sc = new Scanner(System.in);
@@ -77,4 +75,50 @@ public class Hunter extends Hero {
         return tab_dégat;
     }
 
+    public static Hero gHunter(Hero[] heros, Weapon[] liste_arme, int i) {
+        heros[i] = new Hunter();
+        heros[i].setHealth(150);
+        heros[i].setChance(50);
+        heros[i].setCurrent_health(heros[i].getHealth());
+        heros[i].setDegat_base(30);
+        heros[i].setDef(20);
+        heros[i].setCurrent_def(heros[i].getDef());
+        heros[i].setDegat_fond(heros[i].getDegat_base());
+        heros[i].setNbfleche(15);
+        heros[i].setType("feuille");
+
+        heros[i].initialise_inventory();
+        liste_arme[i] = new Weapon();
+        liste_arme[i].setBonus_degat(10);
+        liste_arme[i].setName("arc d'aventurier");
+        liste_arme[i].setType("feuille");
+        liste_arme[i].setType_degat(5);
+        heros[i].addWeapon(liste_arme[i]);
+
+        consommable food = new consommable();
+        food.setName("boeuf");
+        food.setClasse("Food");
+        food.setSoin(25);
+        heros[i].addConsumable(food);
+
+        Potion potion = new Potion();
+        potion.setSoin(40);
+        potion.setClasse("Potion");
+        potion.setName("potion de vie");
+
+        Potion potion1 = new Potion();
+        potion1.setBonus_def(10);
+        potion1.setClasse("Potion");
+        potion1.setName("potion d'armure");
+
+        Potion potion2 = new Potion();
+        potion2.setBonus_degat(10);
+        potion2.setClasse("Potion");
+        potion2.setName("potion de dégat");
+
+        heros[i].addConsumable(potion);
+        heros[i].addConsumable(potion1);
+        heros[i].addConsumable(potion2);
+        return heros[i];
+    }
 }
