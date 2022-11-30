@@ -59,7 +59,7 @@ public class Warrior extends Hero {
             damage = 4 * (warrior.getDegat_base() + arme_equip.getBonus_degat());
             System.out.println("coup critique");
         } else {
-            damage = 2*(warrior.getDegat_base() + arme_equip.getBonus_degat());
+            damage = 2 * (warrior.getDegat_base() + arme_equip.getBonus_degat());
         }
 
         double[] tab_dégat = new double[5];
@@ -77,11 +77,11 @@ public class Warrior extends Hero {
             case "terre" -> tab_dégat[4] = arme_equip.getType_degat();
         }
 
-        warrior.setCurrent_health(warrior.getCurrent_health()/2);
+        warrior.setCurrent_health(warrior.getCurrent_health() / 2);
         return tab_dégat;
     } // mais avec *2 de dégat et perte de la moitié de sa vie
 
-    public static Hero gWarrior(Hero[] heros, Weapon[] liste_arme, int i){
+    public static Hero gWarrior(Hero[] heros, Weapon[] liste_arme, int i) {
         heros[i] = new Warrior();
         heros[i].setChance(10);
         heros[i].setDegat_base(20);

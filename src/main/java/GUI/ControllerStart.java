@@ -10,13 +10,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ControllerChangeScene extends Core {
+public class ControllerStart extends Core {
     @FXML
     private Button bouton1;
+
     @FXML
     void enter(MouseEvent event) throws IOException {
-        Stage stage= (Stage) bouton1.getScene().getWindow();
-        Parent root= FXMLLoader.load(getClass().getResource("Taverne.fxml"));
+        créaFile();
+        Stage stage = (Stage) bouton1.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Taverne.fxml"));
         stage.setScene(new Scene(root));
     }
 

@@ -24,8 +24,7 @@ public class Potion extends consommable {
 
                     if (listeConso[i].getName() == null) { //si emplacemnet vide
 
-                    }
-                    else {
+                    } else {
 
                         if (listeConso[i].getClasse().equals("Potion")) { //si de classe potion
 
@@ -56,15 +55,12 @@ public class Potion extends consommable {
                 if (choix1.equals("potion de vie") || choix1.equals("potion de dégat") || choix1.equals("potion de mana") || choix1.equals("potion d'armure")) {
 
                     break; //si le choix correspond
-                }
-
-                else {
+                } else {
 
                     System.out.println("Mauvais nom");
                 }
 
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
 
                 sc.nextLine();
                 System.out.println("donner une chaine de caractères");
@@ -79,8 +75,7 @@ public class Potion extends consommable {
 
                 if (listeConso[i].getName() == null) {
 
-                }
-                else {
+                } else {
 
                     if (listeConso[i].getName().equals("potion de vie")) {
 
@@ -93,8 +88,7 @@ public class Potion extends consommable {
 
                 System.out.println("le héro a regagné " + (hero.getHealth() - hero.getCurrent_health()) + " pv");
                 hero.setCurrent_health(hero.getHealth());
-            }
-            else {
+            } else {
 
                 hero.setCurrent_health(hero.getCurrent_health() + listeConso[index].getSoin());
                 System.out.println("le héro a regagné " + (listeConso[index].getSoin()) + " pv");
@@ -107,8 +101,7 @@ public class Potion extends consommable {
 
                 if (listeConso[i].getName() == null) {
 
-                }
-                else {
+                } else {
 
                     if (listeConso[i].getName().equals("potion de mana")) {
                         index = i;
@@ -120,8 +113,7 @@ public class Potion extends consommable {
 
                 System.out.println("le héro a regagné " + (hero.getMagie() - hero.getCurrent_magie()) + " mana");
                 hero.setCurrent_magie(hero.getMagie());
-            }
-            else {
+            } else {
 
                 hero.setCurrent_magie(hero.getCurrent_magie() + listeConso[index].getMana());
                 System.out.println("le héro a regagné " + (listeConso[index].getMana()) + " mana");
@@ -134,8 +126,7 @@ public class Potion extends consommable {
 
                 if (listeConso[i].getName() == null) {
 
-                }
-                else {
+                } else {
 
                     if (listeConso[i].getName().equals("potion d'armure")) {
 
@@ -154,8 +145,7 @@ public class Potion extends consommable {
 
                 if (listeConso[i].getName() == null) {
 
-                }
-                else {
+                } else {
 
                     if (listeConso[i].getName().equals("potion de dégat")) {
 

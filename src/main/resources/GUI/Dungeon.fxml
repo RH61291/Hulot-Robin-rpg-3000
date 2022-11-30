@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="533.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19"
+          fx:controller="GUI.ControllerDungeon">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="533.0" prefWidth="1500.0">
+            <children>
+                <ImageView fx:id="fond" fitHeight="600.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../picture/dungeon1/donjon.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="ien1" fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="70.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false"/>
+                <ImageView fx:id="ien2" fitHeight="150.0" fitWidth="200.0" layoutX="450.0" layoutY="70.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false"/>
+                <ImageView fx:id="ien3" fitHeight="150.0" fitWidth="200.0" layoutX="750.0" layoutY="70.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false"/>
+                <ImageView fx:id="ien4" fitHeight="150.0" fitWidth="200.0" layoutX="1050.0" layoutY="70.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false"/>
+                <ImageView fx:id="fl1" fitHeight="150.0" fitWidth="200.0" layoutX="135.0" layoutY="400.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../picture/fleche.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fl2" fitHeight="150.0" fitWidth="200.0" layoutX="435.0" layoutY="400.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../picture/fleche.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fl3" fitHeight="150.0" fitWidth="200.0" layoutX="735.0" layoutY="400.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../picture/fleche.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fl4" fitHeight="150.0" fitWidth="200.0" layoutX="1035.0" layoutY="400.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../picture/fleche.png"/>
+                    </image>
+                </ImageView>
+                <Label fx:id="en1" text="Label" textFill="#0e38cf" visible="false">
+                    <font>
+                        <Font name="Bell MT Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="en2" text="Label" textFill="#0e38cf" visible="false">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="en3" text="Label" textFill="#0e38cf" visible="false">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="en4" text="Label" textFill="#0e38cf" visible="false">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="but1" layoutX="651.0" layoutY="408.0" mnemonicParsing="false" onMouseClicked="#aff"
+                        text="S'enfoncer dans la forêt">
+                    <font>
+                        <Font name="Bell MT" size="18.0"/>
+                    </font>
+                </Button>
+                <ImageView fx:id="imhe1" fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="250.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <ImageView fx:id="imhe2" fitHeight="150.0" fitWidth="200.0" layoutX="450.0" layoutY="250.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <ImageView fx:id="imhe3" fitHeight="150.0" fitWidth="200.0" layoutX="750.0" layoutY="250.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <ImageView fx:id="imhe4" fitHeight="150.0" fitWidth="200.0" layoutX="1050.0" layoutY="250.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <Label fx:id="he1" layoutX="106.0" layoutY="68.0" text="Label" textFill="#9400b1" visible="false">
+                    <font>
+                        <Font name="Bell MT Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="he2" layoutX="134.0" layoutY="149.0" text="Label" textFill="#9400b1" visible="false">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="he3" layoutX="106.0" layoutY="233.0" text="Label" textFill="#d302fa" visible="false">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="he4" layoutX="196.0" layoutY="216.0" text="Label" textFill="#d302fa" visible="false">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <MenuButton fx:id="menu" layoutX="1200.0" layoutY="124.0" mnemonicParsing="false" prefHeight="30.0"
+                            prefWidth="200.0" text="menu" visible="false">
+                    <items>
+                        <MenuItem fx:id="Actions" mnemonicParsing="false" text="Attaques">
+                            <graphic>
+                                <MenuButton mnemonicParsing="false" onMouseClicked="#selectionAtk"
+                                            text="Toutes les attaques">
+                                    <items>
+                                        <MenuItem fx:id="atk1" mnemonicParsing="false" text="Coup d'épée"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton fx:id="qui1" mnemonicParsing="false" onMouseClicked="#atk1"
+                                                            text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci10" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci20" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci30" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci40" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk2" mnemonicParsing="false" text="Berserk -50%pv x2dégat"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk2" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci11" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci21" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci31" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci41" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk3" mnemonicParsing="false" text="Coup de couteau"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk3" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci12" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci22" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci32" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci42" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk4" mnemonicParsing="false" text="Tir" visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk4" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci13" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci23" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci33" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci43" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="pasBalle" mnemonicParsing="false" text="Plus de balle"
+                                                  visible="false"/>
+                                        <MenuItem fx:id="atk5" mnemonicParsing="false" text="Boule de feu 2mana"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk5" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci14" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci24" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci34" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci44" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk6" mnemonicParsing="false" text="Lame d'eau 2mana"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk6" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci15" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci25" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci35" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci45" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk7" mnemonicParsing="false" text="Séisme 2mana"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk7" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci16" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci26" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci36" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci46" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk8" mnemonicParsing="false" text="Feuille lame 2mana"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk8" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="Ci17" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="Bone Arbalist"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci27" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="Bone Courtier"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci37" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="Bone Defender"
+                                                                  visible="false"/>
+                                                        <MenuItem fx:id="Ci47" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="Bone soldier"
+                                                                  visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="pasMana" mnemonicParsing="false" text="Pas assez de mana"
+                                                  visible="false"/>
+                                        <MenuItem fx:id="atk9" mnemonicParsing="false" text="Heal 2mana"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk9" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="hero1" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="hero1" visible="false"/>
+                                                        <MenuItem fx:id="hero2" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="hero2" visible="false"/>
+                                                        <MenuItem fx:id="hero3" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="hero3" visible="false"/>
+                                                        <MenuItem fx:id="hero4" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="hero4" visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk10" mnemonicParsing="false" text="Ressurection 4 mana"
+                                                  visible="false">
+                                            <graphic>
+                                                <MenuButton mnemonicParsing="false" onMouseClicked="#atk10" text="qui?">
+                                                    <items>
+                                                        <MenuItem fx:id="hero11" mnemonicParsing="false"
+                                                                  onAction="#cible1" text="hero1" visible="false"/>
+                                                        <MenuItem fx:id="hero21" mnemonicParsing="false"
+                                                                  onAction="#cible2" text="hero2" visible="false"/>
+                                                        <MenuItem fx:id="hero31" mnemonicParsing="false"
+                                                                  onAction="#cible3" text="hero3" visible="false"/>
+                                                        <MenuItem fx:id="hero41" mnemonicParsing="false"
+                                                                  onAction="#cible4" text="hero4" visible="false"/>
+                                                    </items>
+                                                </MenuButton>
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem fx:id="atk11" mnemonicParsing="false" onAction="#soinGr"
+                                                  text="Soin de groupe 3mana soin/2" visible="false"/>
+                                    </items>
+                                </MenuButton>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Boire une potion">
+                            <graphic>
+                                <MenuButton mnemonicParsing="false" onMouseClicked="#menuBoire" text="inventaire">
+                                    <items>
+                                        <MenuItem fx:id="pvie" mnemonicParsing="false" onAction="#boirepv"
+                                                  text="potion de vie +50pv" visible="false"/>
+                                        <MenuItem fx:id="pdégat" mnemonicParsing="false" onAction="#boiredégat"
+                                                  text="potion de dégat +10dégat" visible="false"/>
+                                        <MenuItem fx:id="pmana" mnemonicParsing="false" onAction="#boiremana"
+                                                  text="potion de mana +10mana" visible="false"/>
+                                        <MenuItem fx:id="parmure" mnemonicParsing="false" onAction="#boirearmure"
+                                                  text="potion d'armure +10def" visible="false"/>
+                                        <MenuItem fx:id="paspot" mnemonicParsing="false"
+                                                  text="vous n'avez pas de potion" visible="false"/>
+                                    </items>
+                                </MenuButton>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Manger">
+                            <graphic>
+                                <MenuButton mnemonicParsing="false" onMouseClicked="#menuManger" text="inventaire">
+                                    <items>
+                                        <MenuItem fx:id="boeuf" mnemonicParsing="false" onAction="#manger2"
+                                                  text="boeuf +25pv" visible="false"/>
+                                        <MenuItem fx:id="repas_fait_maison" mnemonicParsing="false" onAction="#manger3"
+                                                  text="repas fait maison +50pv" visible="false"/>
+                                        <MenuItem fx:id="pasNour" mnemonicParsing="false"
+                                                  text="vous n'avez pas de nourriture" visible="false"/>
+                                    </items>
+                                </MenuButton>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#passer" text="passer son tour"/>
+                    </items>
+                </MenuButton>
+                <Label fx:id="textdégat" layoutX="1364.0" layoutY="292.0" text="Label" textFill="#fa0606"
+                       visible="false">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="textdégatrecu" layoutX="936.0" layoutY="311.0" text="Label" textFill="#ffa000"
+                       visible="false">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="rec" layoutX="709.0" layoutY="266.0" mnemonicParsing="false" onMouseClicked="#Rec"
+                        text="recompense" visible="false"/>
+                <Button fx:id="recarme" layoutX="150.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#rarme"
+                        text="arme" visible="false"/>
+                <Button fx:id="recchance" layoutX="150.0" layoutY="200.0" mnemonicParsing="false"
+                        onMouseClicked="#rchance" text="chance" visible="false"/>
+                <Button fx:id="recdef" layoutX="150.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#rdef"
+                        text="def" visible="false"/>
+                <Button fx:id="recnour" layoutX="150.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#rnour"
+                        text="nourriture" visible="false"/>
+                <Button fx:id="recmana" layoutX="150.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#rmana"
+                        text="mana" visible="false"/>
+                <MenuButton fx:id="recpotion" layoutX="150.0" layoutY="350.0" mnemonicParsing="false" text="potion"
+                            visible="false">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#rpot1" text="potion de mana"/>
+                        <MenuItem mnemonicParsing="false" onAction="#rpot2" text="porion de vie"/>
+                        <MenuItem mnemonicParsing="false" onAction="#rpot3" text="potion de def"/>
+                        <MenuItem mnemonicParsing="false" onAction="#rpot4" text="potion de dégat"/>
+                    </items>
+                </MenuButton>
+                <Label fx:id="reclabel" layoutX="236.0" layoutY="115.0" text="rec" textFill="RED" visible="false">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="sortir" layoutX="150.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#sortir"
+                        text="sortir de la forêt" visible="false"/>
+                <ImageView fx:id="end" fitHeight="600.0" fitWidth="1600.0" layoutX="-1.0" layoutY="33.0"
+                           pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../picture/fin.jpg"/>
+                    </image>
+                </ImageView>
+                <Text fx:id="perdu" fill="#fc0000" layoutX="523.0" layoutY="351.0" stroke="#fad4d4" strokeType="OUTSIDE"
+                      text="Le donjon s'est montré trop difficile pour vous, aventurier" visible="false">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

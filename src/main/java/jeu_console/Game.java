@@ -2,13 +2,7 @@ package jeu_console;
 
 import jeu_console.Combattant.Enemy;
 import jeu_console.Combattant.Hero.Hero;
-import jeu_console.Combattant.Hero.cc_distance.Hunter;
-import jeu_console.Combattant.Hero.cc_distance.Warrior;
-import jeu_console.Combattant.Hero.cc_distance.sorcier.Healer;
-import jeu_console.Combattant.Hero.cc_distance.sorcier.Mage;
 import jeu_console.Item.arme_potion.Weapon;
-import jeu_console.Item.arme_potion.conso.Potion;
-import jeu_console.Item.arme_potion.consommable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,11 +34,10 @@ public class Game {
 
                 System.out.println("combien de heros (entre 1 et 4): \n----------------------------");
                 nombre_heros = sc.nextInt(); //nombre de heros
-                if (nombre_heros > 0 && nombre_heros <= 4){
+                if (nombre_heros > 0 && nombre_heros <= 4) {
                     break;
                 }
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
 
                 sc.nextLine();
                 System.out.println("donner un entier entre 1 et 4\n");
@@ -77,8 +70,7 @@ public class Game {
                 if (classe_heros[i].equals("Warrior") || classe_heros[i].equals("Hunter") || classe_heros[i].equals("Healer") || classe_heros[i].equals("Mage")) {
 
                     break;
-                }
-                else {
+                } else {
 
                     System.out.println("cette classe n'existe pas");
                 }
@@ -88,19 +80,19 @@ public class Game {
             noms_heros[i] = sc.nextLine();
 
             if (classe_heros[i].equals("Warrior")) {
-                heros[i]=gWarrior(heros,liste_arme,i);
+                heros[i] = gWarrior(heros, liste_arme, i);
             }
 
             if (classe_heros[i].equals("Hunter")) {
-                heros[i]=gHunter(heros,liste_arme,i);
+                heros[i] = gHunter(heros, liste_arme, i);
             }
 
             if (classe_heros[i].equals("Healer")) {
-                heros[i]=gHealer(heros,liste_arme,i);
+                heros[i] = gHealer(heros, liste_arme, i);
             }
 
             if (classe_heros[i].equals("Mage")) {
-                heros[i]=gMage(heros,liste_arme,i);
+                heros[i] = gMage(heros, liste_arme, i);
             }
 
         }//attribution classe et nom
@@ -200,8 +192,7 @@ public class Game {
                             var = false;
                             break;
                         }
-                    }
-                    else {
+                    } else {
 
                     }
                 } //tour des héros
@@ -214,8 +205,7 @@ public class Game {
                     if (Boss.getCurrent_health() <= 0) {
 
                         compteurEnemy += 1;
-                    }
-                    else {
+                    } else {
 
                         System.out.println("----------------------------");
                         comp += 1;
@@ -231,8 +221,7 @@ public class Game {
                                 System.out.println(classe_heros[n] + " " + noms_heros[n] + " a été attaqué");
                                 receiveDamage(charge(Boss), heros[n]); //les ennemis n'attaque pas le morts
                                 var3 = false;
-                            }
-                            else {
+                            } else {
                             }
                         }
                     }
@@ -240,15 +229,13 @@ public class Game {
                         System.out.println("----------------------------\n");
                     }
 
-                }
-                else {
+                } else {
                     for (int i = 0; i < nombre_ennemi; i++) {
 
                         if (listeEnemy[i].getCurrent_health() <= 0) { //si ennemi mort
 
                             compteurEnemy += 1;
-                        }
-                        else {
+                        } else {
 
                             System.out.println("----------------------------");
                             comp += 1;
@@ -265,8 +252,7 @@ public class Game {
                                     System.out.println(classe_heros[n] + " " + noms_heros[n] + " a été attaqué");
                                     receiveDamage(charge(listeEnemy[i]), heros[n]); //les ennemis n'attaque pas le morts
                                     var3 = false;
-                                }
-                                else {
+                                } else {
 
                                 }
                             }
@@ -285,8 +271,7 @@ public class Game {
 
                         System.out.println(classe_heros[i] + " " + noms_heros[i] + " est mort");
                         compteurHero += 1;
-                    }
-                    else {
+                    } else {
 
                         if (classe_heros[i].equals("Mage") || classe_heros[i].equals("Healer")) {
 
@@ -335,8 +320,7 @@ public class Game {
 
                             System.out.println(classe_heros[i] + " " + noms_heros[i] + " a regagné " + (heros[i].getMagie() - heros[i].getCurrent_magie()) + " mana");
                             heros[i].setCurrent_magie(heros[i].getMagie());
-                        }
-                        else {
+                        } else {
 
                             System.out.println(classe_heros[i] + " " + noms_heros[i] + " a regagné " + ((heros[i].getMagie() / 2 + heros[i].getCurrent_magie()) - heros[i].getCurrent_magie()) + " mana");
                             heros[i].setCurrent_magie(heros[i].getMagie() / 2 + heros[i].getCurrent_magie());
@@ -364,7 +348,7 @@ public class Game {
             for (int i = 0; i < heros.length; i++) {
 
                 if (heros[i].getCurrent_health() >= 0) {
-                    System.out.println(" le héro "+ noms_heros[i]+ " de classe "+classe_heros[i]+ " récupère sa récompense");
+                    System.out.println(" le héro " + noms_heros[i] + " de classe " + classe_heros[i] + " récupère sa récompense");
                     Récompense.recompense(heros[i], classe_heros[i], compteurCombat);
                 }
             } //récompense de fin de combat

@@ -35,12 +35,12 @@ public class Menu {
         while (true) {
             if (classe.equals("Healer")) {
 
-                System.out.println("Quelle action doit faire " + classe + " " + nom + " "+ hero.getCurrent_magie()+" mana restant:\nSoigner(2 mana), Soin de groupe(3 mana)," +
+                System.out.println("Quelle action doit faire " + classe + " " + nom + " " + hero.getCurrent_magie() + " mana restant:\nSoigner(2 mana), Soin de groupe(3 mana)," +
                         " Réssusciter(4 mana), Manger, Boire une potion, Passer");
             }
             if (classe.equals("Mage")) {
 
-                System.out.println("Quelle action doit faire " + classe + " " + nom +" "+ hero.getCurrent_magie()+" mana restant:\nBoule de feu(2 mana), Lame d'eau(2 mana)," +
+                System.out.println("Quelle action doit faire " + classe + " " + nom + " " + hero.getCurrent_magie() + " mana restant:\nBoule de feu(2 mana), Lame d'eau(2 mana)," +
                         "Séisme(2 mana), Tranche herbe(2 mana), Manger, Boire une potion, Passer");
             }
             if (classe.equals("Hunter")) {
@@ -55,7 +55,7 @@ public class Menu {
             choix = br.readLine();
             //si choix valide alors break
 
-            if (choix.equals("Attaque") || choix.equals("Attaque au couteau") ||choix.equals("Berserk") || choix.equals("Passer")) {
+            if (choix.equals("Attaque") || choix.equals("Attaque au couteau") || choix.equals("Berserk") || choix.equals("Passer")) {
 
                 break;
             }
@@ -65,32 +65,29 @@ public class Menu {
                 if (hero.getNbfleche() >= 1) { //si a plus d'une flèche
 
                     break;
-                }
-                else {
+                } else {
 
                     System.out.println("Manque de flèche");
                 }
             }
 
-            if ((choix.equals("Soigner") || choix.equals("Boule de feu") || choix.equals("Lame d'eau")|| choix.equals("Séisme")|| choix.equals("Tranche herbe"))) {
+            if ((choix.equals("Soigner") || choix.equals("Boule de feu") || choix.equals("Lame d'eau") || choix.equals("Séisme") || choix.equals("Tranche herbe"))) {
 
                 if (hero.getCurrent_magie() >= 2) {
 
                     break;
-                }
-                else {
+                } else {
 
                     System.out.println("pas assez de magie");
                 }
             }
 
-            if (choix.equals("Soin de groupe") ){
+            if (choix.equals("Soin de groupe")) {
 
                 if (hero.getCurrent_magie() >= 3) {
 
                     break;
-                }
-                else {
+                } else {
 
                     System.out.println("pas assez de magie");
                 }
@@ -103,8 +100,7 @@ public class Menu {
 
                     if (listeConso[i].getClasse() == null) {
 
-                    }
-                    else {
+                    } else {
 
                         if (listeConso[i].getClasse().equals("Food")) {
                             compteurNour += 1;
@@ -114,8 +110,7 @@ public class Menu {
                 if (compteurNour != 0) {
 
                     break;
-                }
-                else {
+                } else {
 
                     System.out.println("pas de nourriture dans l'inventaire");
                 }
@@ -128,8 +123,7 @@ public class Menu {
 
                     if (listeConso[i].getClasse() == null) {
 
-                    }
-                    else {
+                    } else {
 
                         if (listeConso[i].getClasse().equals("Potion")) {
 
@@ -161,19 +155,15 @@ public class Menu {
                     if (compteur >= 1) {
 
                         break;
-                    }
-                    else {
+                    } else {
 
                         System.out.println("pas de personne a réssusciter");
                     }
-                }
-                else {
+                } else {
 
                     System.out.println("pas assez de magie");
                 }
-            }
-
-            else {
+            } else {
                 System.out.println("Mauvaise action");
             }
         } //donne le choix
@@ -190,7 +180,7 @@ public class Menu {
             System.out.println("----------------------------\n");
         }
 
-        if (choix.equals("Passer")){
+        if (choix.equals("Passer")) {
         }
 
         if (choix.equals("Boire une potion")) {
@@ -220,20 +210,17 @@ public class Menu {
                     if (atkChoice > listeEnemy.length - 1) {
 
                         System.out.println("mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (listeEnemy[atkChoice].getCurrent_health() <= 0) {
 
                             System.out.println("la cible est déja morte");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
 
                     sc.nextLine();
                     System.out.println("donner un chiffre");
@@ -271,14 +258,12 @@ public class Menu {
                     if (atkChoice > listeEnemy.length - 1) {
 
                         System.out.println("mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (listeEnemy[atkChoice].getCurrent_health() <= 0) {
 
                             System.out.println("la cible est déja morte");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
@@ -322,20 +307,17 @@ public class Menu {
                     if (atkChoice > listeEnemy.length - 1) {
 
                         System.out.println("mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (listeEnemy[atkChoice].getCurrent_health() <= 0) {
 
                             System.out.println("la cible est déja morte");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
 
                     sc.nextLine();
                     System.out.println("donner un chiffre");
@@ -374,20 +356,17 @@ public class Menu {
                     if (atkChoice > listeEnemy.length - 1) {
 
                         System.out.println("mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (listeEnemy[atkChoice].getCurrent_health() <= 0) {
 
                             System.out.println("la cible est déja morte");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
 
                     sc.nextLine();
                     System.out.println("donner un chiffre");
@@ -426,14 +405,12 @@ public class Menu {
                     if (atkChoice > listeEnemy.length - 1) {
 
                         System.out.println("mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (listeEnemy[atkChoice].getCurrent_health() <= 0) {
 
                             System.out.println("la cible est déja morte");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
@@ -472,14 +449,12 @@ public class Menu {
                     if (cible > liste_Hero.length - 1 || cible < 0) {
 
                         System.out.println("Mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (liste_Hero[cible].getCurrent_health() == 0) {
 
                             System.out.println("ne peu soigner un mort");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
@@ -515,20 +490,17 @@ public class Menu {
                     if (atkChoice > listeEnemy.length - 1) {
 
                         System.out.println("mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (listeEnemy[atkChoice].getCurrent_health() <= 0) {
 
                             System.out.println("la cible est déja morte");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
 
                     sc.nextLine();
                     System.out.println("donner un chiffre");
@@ -567,13 +539,11 @@ public class Menu {
                     if (cible > liste_Hero.length - 1 || cible < 0) {
 
                         System.out.println("Mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         break;
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
 
                     sc.nextLine();
                     System.out.println("donner un chiffre");
@@ -603,20 +573,17 @@ public class Menu {
                     if (atkChoice > listeEnemy.length - 1) {
 
                         System.out.println("mauvais chiffre");
-                    }
-                    else {
+                    } else {
 
                         if (listeEnemy[atkChoice].getCurrent_health() <= 0) {
 
                             System.out.println("la cible est déja morte");
-                        }
-                        else {
+                        } else {
 
                             break;
                         }
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
 
                     sc.nextLine();
                     System.out.println("donner un chiffre");

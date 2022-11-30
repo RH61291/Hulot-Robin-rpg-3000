@@ -5,10 +5,6 @@ import jeu_console.Combattant.Hero.Hero;
 import jeu_console.Item.arme_potion.Weapon;
 import jeu_console.Item.arme_potion.conso.Potion;
 import jeu_console.Item.arme_potion.consommable;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 import java.util.Random;
 import java.util.Scanner;

@@ -27,8 +27,7 @@ public class Food extends consommable {
 
                     if (listeConso[i].getName() == null) { //si l'élément est vide
 
-                    }
-                    else {
+                    } else {
 
                         if (listeConso[i].getClasse().equals("Food")) { //si sa classe est food
 
@@ -47,8 +46,7 @@ public class Food extends consommable {
 
                     if (listeConso[i].getName() == null) {
 
-                    }
-                    else {
+                    } else {
 
                         if (listeConso[i].getClasse().equals("Food")) {
 

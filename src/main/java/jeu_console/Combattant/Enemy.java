@@ -11,14 +11,15 @@ public class Enemy extends Combattant {
         Enemy création = new Enemy(); //nouvel ennemi
         Random r = new Random();
 
-        int n = 50 + r.nextInt(50) +level*5;//la vie
+        int n = 50 + r.nextInt(50) + level * 5;//la vie
         création.setHealth(n);
         création.setCurrent_health(création.getHealth());
 
-        int n2 = 15 + r.nextInt(15)+5*level; //les dégats de base
+        int n2 = 15 + r.nextInt(15) + 5 * level; //les dégats de base
         création.setDegat_base(n2);
 
-        int n3 = 5 + r.nextInt(10)+5*level; //la défense
+        int n3 = 5 + r.nextInt(10) + 5 * level; //la défense
+        création.setCurrent_def(n3);
         création.setDef(n3);
 
         int n4 = r.nextInt(3);// son type
@@ -59,14 +60,15 @@ public class Enemy extends Combattant {
         Enemy création = new Enemy();
 
         Random r = new Random();
-        création.setHealth(600); //vie fixe
+        création.setHealth(1000); //vie fixe
         création.setCurrent_health(création.getHealth());
 
-        int n2 = 40 + r.nextInt(35);
+        int n2 = 50 + r.nextInt(35);
         création.setDegat_base(n2);
 
-        int n3 = 20 + r.nextInt(20);
+        int n3 = 30 + r.nextInt(20);
         création.setDef(n3);
+        création.setCurrent_def(n3);
 
         int n4 = r.nextInt(3);
         switch (n4) {

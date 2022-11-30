@@ -68,7 +68,7 @@ public class Hero extends Combattant {
             }
             if (i == this.inventaire_consumable.length - 1) {
 
-                System.out.println("inventaire d'armure plein");
+                System.out.println("inventaire de consommable plein");
             }
         }
     }

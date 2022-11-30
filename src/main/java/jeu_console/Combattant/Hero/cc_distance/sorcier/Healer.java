@@ -6,12 +6,10 @@ import jeu_console.Combattant.Hero.Hero;
 import jeu_console.Item.arme_potion.Weapon;
 import jeu_console.Item.arme_potion.conso.Potion;
 import jeu_console.Item.arme_potion.consommable;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 import java.util.Random;
+
+import static java.lang.Math.round;
 
 
 public class Healer extends Hero {
@@ -40,7 +38,7 @@ public class Healer extends Hero {
     } //méthode de heal
 
     public static void ressurect(Healer lanceur, Combattant cible) {
-        cible.setCurrent_health(cible.getHealth() / 3); //rend 1/3 des pv max à la cible
+        cible.setCurrent_health(round(cible.getHealth() / 3)); //rend 1/3 des pv max à la cible
         lanceur.setCurrent_magie(lanceur.getCurrent_magie() - 4);
     }
 
@@ -50,17 +48,17 @@ public class Healer extends Hero {
 
         Weapon arme_equip = lanceur.getInventaire_weapon()[lanceur.getWeapon_equipped()];
 
-        for (int i = 0; i < cible.length ; i++) { //parcours de la liste des héros
+        for (int i = 0; i < cible.length; i++) { //parcours de la liste des héros
 
-            if(cible[i].getCurrent_health()>0){ //si héros vivant
+            if (cible[i].getCurrent_health() > 0) { //si héros vivant
 
                 double vie = cible[i].getCurrent_health();
                 if (n < lanceur.getChance()) {
-                    vie = cible[i].getCurrent_health() +  (lanceur.getSoin_base() + arme_equip.getBonus_soin());
+                    vie = cible[i].getCurrent_health() + (lanceur.getSoin_base() + arme_equip.getBonus_soin());
                     System.out.println("soin critique");
                     System.out.println((lanceur.getSoin_base() + arme_equip.getBonus_soin()) + " vie soignée");
                 } else {
-                    vie = cible[i].getCurrent_health() + (lanceur.getSoin_base() + arme_equip.getBonus_soin())/2; //soin du héros
+                    vie = cible[i].getCurrent_health() + (lanceur.getSoin_base() + arme_equip.getBonus_soin()) / 2; //soin du héros
                     System.out.println((lanceur.getSoin_base() + arme_equip.getBonus_soin()) + " vie soignée");
                 }
                 if (vie > cible[i].getHealth()) {
@@ -72,7 +70,7 @@ public class Healer extends Hero {
         lanceur.setCurrent_magie(lanceur.getCurrent_magie() - 3);
     } //heal de groupe
 
-    public static Hero gHealer(Hero[] heros, Weapon[] liste_arme, int i){
+    public static Hero gHealer(Hero[] heros, Weapon[] liste_arme, int i) {
         heros[i] = new Healer();
         heros[i].setHealth(100);
         heros[i].setChance(50);

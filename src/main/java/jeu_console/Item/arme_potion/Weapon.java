@@ -12,13 +12,13 @@ import lombok.ToString;
 @ToString
 
 public class Weapon extends item {
-    public static void main(String[] args) {
-
-    }
-
     private int bonus_degat;
     private int bonus_soin;
     private String name;
     private int type_degat;
     private String type;
+
+    public static void main(String[] args) {
+
+    }
 }

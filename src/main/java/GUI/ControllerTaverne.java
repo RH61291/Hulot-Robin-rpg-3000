@@ -4,36 +4,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
-import jeu_console.Combattant.Combattant;
-
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import jeu_console.Combattant.Enemy;
+import javafx.stage.Stage;
 import jeu_console.Combattant.Hero.Hero;
-import jeu_console.Combattant.Hero.cc_distance.Hunter;
-import jeu_console.Combattant.Hero.cc_distance.Warrior;
-import jeu_console.Combattant.Hero.cc_distance.sorcier.Healer;
-import jeu_console.Combattant.Hero.cc_distance.sorcier.Mage;
-import jeu_console.Item.arme_potion.Weapon;
-import jeu_console.Item.arme_potion.conso.Potion;
-import jeu_console.Item.arme_potion.consommable;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
-
-import static jeu_console.Combattant.Hero.cc_distance.Hunter.gHunter;
-import static jeu_console.Combattant.Hero.cc_distance.Warrior.gWarrior;
-import static jeu_console.Combattant.Hero.cc_distance.sorcier.Healer.gHealer;
-import static jeu_console.Combattant.Hero.cc_distance.sorcier.Mage.gMage;
 
 
 public class ControllerTaverne extends Core {
+    public Hero[] listehéros;
 
     @FXML
     private Button bouton1;
@@ -58,41 +41,47 @@ public class ControllerTaverne extends Core {
     @FXML
     private Button GWarrior;
     @FXML
-    private Text sur1;
+    private Label label1;
     @FXML
-    private Text sur2;
-    @FXML
-    private Text sur3;
-    @FXML
-    private Text sur4;
-    @FXML
-    private Text un;
-    @FXML
-    private Text deux;
-    @FXML
-    private Text trois;
-    @FXML
-    private Text quatre;
+    private Label label2;
 
 
     @FXML
-    void choix1(MouseEvent event) {
-        setNombre_héros(1);
+    void choix1(MouseEvent event) throws FileNotFoundException {
+        ecriture("\n1");
 
-        Hero[] temp=new Hero[1];
-        setListehéros(temp);
+        listehéros = new Hero[1];
 
-        String[] temp2=new String[1];
-        setListeclasse(temp2);
+        ecriture("\nnombre ennemis");
+        ecriture("\n1");
+        ecriture("\nliste classe");
 
-        Weapon[] temp3=new Weapon[1];
-        setListe_arme(temp3);
 
-        Enemy[] temp4=new Enemy[1];
-        setListe_enemy(temp4);
-        for (int i = 0; i < liste_enemy.length; i++) {
-            liste_enemy[i]=Enemy.genEnemy(1);
-        }
+        bouton1.setVisible(false);
+        bouton2.setVisible(false);
+        bouton3.setVisible(false);
+        bouton4.setVisible(false);
+        énoncé1.setVisible(false); //les boutons des autres choix (nombre héros)
+
+        énoncé2.setVisible(true);
+        GHealer.setVisible(true);
+        GWarrior.setVisible(true); //les bouton de choix de classe
+        GMAge.setVisible(true);
+        GHunter.setVisible(true);
+        writeData("/" + lecture(2), 750, 210, label1);
+        writeData("1", 740, 210, label2); //le nombre de classe à choisir en cour
+
+    }
+
+    @FXML
+    void choix2(MouseEvent event) throws FileNotFoundException {
+        ecriture("\n2");
+
+        listehéros = new Hero[2];
+
+        ecriture("\nnombre ennemis");
+        ecriture("\n2");
+        ecriture("\nliste classe");
 
         bouton1.setVisible(false);
         bouton2.setVisible(false);
@@ -105,30 +94,19 @@ public class ControllerTaverne extends Core {
         GWarrior.setVisible(true);
         GMAge.setVisible(true);
         GHunter.setVisible(true);
-
-
-        sur1.setVisible(true);
-        un.setVisible(true);
+        writeData("/" + lecture(2), 750, 210, label1);
+        writeData("1", 740, 210, label2);
     }
 
     @FXML
-    void choix2(MouseEvent event) {
-        setNombre_héros(2);
+    void choix3(MouseEvent event) throws FileNotFoundException {
+        ecriture("\n3");
 
-        Hero[] temp=new Hero[2];
-        setListehéros(temp);
+        listehéros = new Hero[3];
 
-        String[] temp2=new String[2];
-        setListeclasse(temp2);
-
-        Weapon[] temp3=new Weapon[2];
-        setListe_arme(temp3);
-
-        Enemy[] temp4=new Enemy[2];
-        setListe_enemy(temp4);
-        for (int i = 0; i < liste_enemy.length; i++) {
-            liste_enemy[i]=Enemy.genEnemy(1);
-        }
+        ecriture("\nnombre ennemis");
+        ecriture("\n3");
+        ecriture("\nliste classe");
 
         bouton1.setVisible(false);
         bouton2.setVisible(false);
@@ -141,30 +119,20 @@ public class ControllerTaverne extends Core {
         GWarrior.setVisible(true);
         GMAge.setVisible(true);
         GHunter.setVisible(true);
+        writeData("/" + lecture(2), 750, 210, label1);
+        writeData("1", 740, 210, label2);
 
-
-        sur2.setVisible(true);
-        un.setVisible(true);
     }
 
     @FXML
-    void choix3(MouseEvent event) {
-        setNombre_héros(3);
+    void choix4(MouseEvent event) throws FileNotFoundException {
+        ecriture("\n4");
 
-        Hero[] temp=new Hero[3];
-        setListehéros(temp);
+        listehéros = new Hero[4];
 
-        String[] temp2=new String[3];
-        setListeclasse(temp2);
-
-        Weapon[] temp3=new Weapon[3];
-        setListe_arme(temp3);
-
-        Enemy[] temp4=new Enemy[3];
-        setListe_enemy(temp4);
-        for (int i = 0; i < liste_enemy.length; i++) {
-            liste_enemy[i]=Enemy.genEnemy(1);
-        }
+        ecriture("\nnombre ennemis");
+        ecriture("\n4");
+        ecriture("\nliste classe");
 
         bouton1.setVisible(false);
         bouton2.setVisible(false);
@@ -177,564 +145,515 @@ public class ControllerTaverne extends Core {
         GWarrior.setVisible(true);
         GMAge.setVisible(true);
         GHunter.setVisible(true);
+        writeData("/" + lecture(2), 750, 210, label1);
+        writeData("1", 740, 210, label2);
 
-
-        sur3.setVisible(true);
-        un.setVisible(true);
-    }
-
-    @FXML
-    void choix4(MouseEvent event) {
-        setNombre_héros(4);
-
-        Hero[] temp=new Hero[4];
-        setListehéros(temp);
-
-        String[] temp2=new String[4];
-        setListeclasse(temp2);
-
-        Weapon[] temp3=new Weapon[4];
-        setListe_arme(temp3);
-
-        Enemy[] temp4=new Enemy[4];
-        setListe_enemy(temp4);
-        for (int i = 0; i < liste_enemy.length; i++) {
-            liste_enemy[i]=Enemy.genEnemy(1);
-        }
-
-        bouton1.setVisible(false);
-        bouton2.setVisible(false);
-        bouton3.setVisible(false);
-        bouton4.setVisible(false);
-        énoncé1.setVisible(false);
-
-        énoncé2.setVisible(true);
-        GHealer.setVisible(true);
-        GWarrior.setVisible(true);
-        GMAge.setVisible(true);
-        GHunter.setVisible(true);
-
-
-        sur4.setVisible(true);
-        un.setVisible(true);
     }
 
 
-
     @FXML
-    void genHealer(MouseEvent event) {
-        if (nombre_héros==1){
-            listehéros[0]=gHealer(listehéros,liste_arme,0);
-            listeclasse[0]="healer";
+    void genHealer(MouseEvent event) throws FileNotFoundException {
+        if (lecture(2).equals("1")) { //si 1 seul héros
+            listehéros[0] = new Hero(); //créer la liste et initialisation
+            ecriture("\nhealer"); //liste la classe
 
             énoncé2.setVisible(false);
             GHealer.setVisible(false);
             GWarrior.setVisible(false);
             GMAge.setVisible(false);
             GHunter.setVisible(false);
-            sur1.setVisible(false);
-            un.setVisible(false);
+            label2.setVisible(false);
+            label1.setVisible(false);
             sortieTav.setVisible(true);
         }
 
-        if (nombre_héros==2){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("2")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==1){
-                        listehéros[1] = gHealer(listehéros,liste_arme,1);
-                        listeclasse[1]="healer";
+                if (listehéros[i] == null) {
+                    if (i == 1) { //héros en dernière position
+                        listehéros[1] = new Hero();
+                        ecriture(" healer");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur2.setVisible(false);
-                        deux.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 1) {
-                        listehéros[i]= gHealer(listehéros,liste_arme,i);
-                        listeclasse[i]="healer";
-                        a=false;
-                        un.setVisible(false);
-                        deux.setVisible(true);
+                        listehéros[i] = new Hero(); //héros se trouvant avant, permet d'avoir l'odre des choix qui est l'odre de la liste des classe
+                        ecriture("\nhealer");
+                        a = false;
+                        writeData("2", 740, 210, label2);
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==3){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("3")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==2){
-                        listehéros[2] = gHealer(listehéros,liste_arme,2);
-                        listeclasse[2]="healer";
+                if (listehéros[i] == null) {
+                    if (i == 2) {
+                        listehéros[2] = new Hero();
+                        ecriture(" healer");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur3.setVisible(false);
-                        trois.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 2) {
-                        listehéros[i]= gHealer(listehéros,liste_arme,i);
-                        listeclasse[i]="healer";
-                        a=false;
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        listehéros[i] = new Hero();
+                        a = false;
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
+                            ecriture(" healer");
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nhealer");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==4){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("4")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==3){
-                        listehéros[3] = gHealer(listehéros,liste_arme,3);
-                        listeclasse[3]="healer";
+                if (listehéros[i] == null) {
+                    if (i == 3) {
+                        listehéros[3] = new Hero();
+                        ecriture(" healer");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur4.setVisible(false);
-                        quatre.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 3) {
-                        listehéros[i]= gHealer(listehéros,liste_arme,i);
-                        listeclasse[i]="healer";
-                        a=false;
-                        if(i==2){
-                            trois.setVisible(false);
-                            quatre.setVisible(true);
+                        listehéros[i] = new Hero();
+                        a = false;
+                        if (i == 2) {
+                            writeData("4", 740, 210, label2);
+                            ecriture(" healer");
                         }
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
+                            ecriture(" healer");
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nhealer");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
+
     }
 
     @FXML
-    void genHunter(MouseEvent event) {
-        if (nombre_héros==1){
-            listehéros[0] = gHunter(listehéros,liste_arme,0);
-            listeclasse[0]="hunter";
+    void genHunter(MouseEvent event) throws FileNotFoundException {
+        if (lecture(2).equals("1")) {
+            listehéros[0] = new Hero();
+            ecriture("\nhunter");
 
             énoncé2.setVisible(false);
             GHealer.setVisible(false);
             GWarrior.setVisible(false);
             GMAge.setVisible(false);
             GHunter.setVisible(false);
-            sur1.setVisible(false);
-            un.setVisible(false);
+            label2.setVisible(false);
+            label1.setVisible(false);
             sortieTav.setVisible(true);
         }
 
-        if (nombre_héros==2){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("2")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==1){
-                        listehéros[1] = gHunter(listehéros,liste_arme,1);
-                        listeclasse[1]="hunter";
+                if (listehéros[i] == null) {
+                    if (i == 1) {
+                        listehéros[1] = new Hero();
+                        ecriture(" hunter");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur2.setVisible(false);
-                        deux.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 1) {
-                        listehéros[1] = gHunter(listehéros,liste_arme,i);
-                        listeclasse[1]="hunter";
+                        listehéros[i] = new Hero();
+                        ecriture("\nhunter");
                         a = false;
-                        un.setVisible(false);
-                        deux.setVisible(true);
+                        writeData("2", 740, 210, label2);
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==3){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("3")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==2){
-                        listehéros[2] = gHunter(listehéros,liste_arme,2);
-                        listeclasse[2]="hunter";
+                if (listehéros[i] == null) {
+                    if (i == 2) {
+                        listehéros[2] = new Hero();
+                        ecriture(" hunter");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur3.setVisible(false);
-                        trois.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 2) {
-                        listehéros[i] = gHunter(listehéros,liste_arme,i);
-                        listeclasse[i]="hunter";
+                        listehéros[i] = new Hero();
+                        ecriture(" hunter");
                         a = false;
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nhunter");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==4){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("4")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==3){
-                        listehéros[3] = gHunter(listehéros,liste_arme,3);
-                        listeclasse[3]="hunter";
+                if (listehéros[i] == null) {
+                    if (i == 3) {
+                        listehéros[3] = new Hero();
+                        ecriture(" hunter");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur4.setVisible(false);
-                        quatre.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 3) {
-                        listehéros[i] = gHunter(listehéros,liste_arme,i);
-                        listeclasse[i]="hunter";
+                        listehéros[i] = new Hero();
                         a = false;
-                        if(i==2){
-                            trois.setVisible(false);
-                            quatre.setVisible(true);
+                        if (i == 2) {
+                            writeData("4", 740, 210, label2);
+                            ecriture(" hunter");
                         }
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
+                            ecriture(" hunter");
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nhunter");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
     }
 
     @FXML
-    void genMage(MouseEvent event) {
-        if (nombre_héros==1){
-            listehéros[0]=gMage(listehéros,liste_arme,0);
-            listeclasse[0]="mage";
+    void genMage(MouseEvent event) throws FileNotFoundException {
+        if (lecture(2).equals("1")) {
+            listehéros[0] = new Hero();
+            ecriture("\nmage");
 
             énoncé2.setVisible(false);
             GHealer.setVisible(false);
             GWarrior.setVisible(false);
             GMAge.setVisible(false);
             GHunter.setVisible(false);
-            sur1.setVisible(false);
-            un.setVisible(false);
+            label2.setVisible(false);
+            label1.setVisible(false);
             sortieTav.setVisible(true);
         }
 
-        if (nombre_héros==2){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("2")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==1){
-                        listehéros[1]=gMage(listehéros,liste_arme,1);
-                        listeclasse[1]="mage";
+                if (listehéros[i] == null) {
+                    if (i == 1) {
+                        listehéros[1] = new Hero();
+                        ecriture(" mage");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur2.setVisible(false);
-                        deux.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
 
                     }
                     if (i != 1) {
-                        listehéros[i]=gMage(listehéros,liste_arme,i);
-                        listeclasse[i]="mage";
+                        listehéros[i] = new Hero();
+                        ecriture("\nmage");
                         a = false;
-                        un.setVisible(false);
-                        deux.setVisible(true);
+                        writeData("2", 740, 210, label2);
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==3){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("3")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==2){
-                        listehéros[2]=gMage(listehéros,liste_arme,2);
-                        listeclasse[2]="mage";
+                if (listehéros[i] == null) {
+                    if (i == 2) {
+                        listehéros[2] = new Hero();
+                        ecriture(" mage");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur3.setVisible(false);
-                        trois.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 2) {
-                        listehéros[i]=gMage(listehéros,liste_arme,i);
-                        listeclasse[i]="mage";
+                        listehéros[i] = new Hero();
                         a = false;
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
+                            ecriture(" mage");
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nmage");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==4){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("4")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==3){
-                        listehéros[3]=gMage(listehéros,liste_arme,3);
-                        listeclasse[3]="mage";
+                if (listehéros[i] == null) {
+                    if (i == 3) {
+                        listehéros[3] = new Hero();
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur4.setVisible(false);
-                        quatre.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
+                        ecriture(" mage");
                     }
                     if (i != 3) {
-                        listehéros[i]=gMage(listehéros,liste_arme,i);
-                        listeclasse[i]="mage";
+                        listehéros[i] = new Hero();
                         a = false;
-                        if(i==2){
-                            trois.setVisible(false);
-                            quatre.setVisible(true);
+                        if (i == 2) {
+                            writeData("4", 740, 210, label2);
+                            ecriture(" mage");
                         }
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
+                            ecriture(" mage");
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nmage");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
     }
 
     @FXML
-    void genWarrior(MouseEvent event) {
-        if (nombre_héros==1){
-            listeclasse[0]="warrior";
-            listehéros[0]=gWarrior(listehéros,liste_arme,0);
+    void genWarrior(MouseEvent event) throws FileNotFoundException {
+        if (lecture(2).equals("1")) {
+            ecriture("\nwarrior");
+            listehéros[0] = new Hero();
 
             énoncé2.setVisible(false);
             GHealer.setVisible(false);
             GWarrior.setVisible(false);
             GMAge.setVisible(false);
             GHunter.setVisible(false);
-            sur1.setVisible(false);
-            un.setVisible(false);
+            label2.setVisible(false);
+            label1.setVisible(false);
             sortieTav.setVisible(true);
 
         }
 
-        if (nombre_héros==2){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("2")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==1){
-                        listeclasse[1]="warrior";
-                        listehéros[1]=gWarrior(listehéros,liste_arme,1);
+                if (listehéros[i] == null) {
+                    if (i == 1) {
+                        ecriture(" warrior");
+                        listehéros[1] = new Hero();
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur2.setVisible(false);
-                        deux.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
 
                     }
                     if (i != 1) {
-                        listeclasse[i]="warrior";
-                        listehéros[i]=gWarrior(listehéros,liste_arme,i);
+                        ecriture("\nwarrior");
+                        listehéros[i] = new Hero();
                         a = false;
-                        un.setVisible(false);
-                        deux.setVisible(true);
+                        writeData("2", 740, 210, label2);
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==3){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("3")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==2){
-                        listehéros[2]=gWarrior(listehéros,liste_arme,2);
-                        listeclasse[2]="warrior";
+                if (listehéros[i] == null) {
+                    if (i == 2) {
+                        listehéros[2] = new Hero();
+                        ecriture(" warrior");
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur3.setVisible(false);
-                        trois.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 2) {
-                        listeclasse[i]="warrior";
-                        listehéros[i]=gWarrior(listehéros,liste_arme,i);
+                        listehéros[i] = new Hero();
                         a = false;
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
+                            ecriture(" warrior");
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nwarrior");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
 
-        if (nombre_héros==4){
-            Boolean a=true;
-            int i =0;
-            while(a){
+        if (lecture(2).equals("4")) {
+            Boolean a = true;
+            int i = 0;
+            while (a) {
 
-                if (listehéros[i]==null){
-                    if(i==3){
-                        listeclasse[3]="warrior";
-                        listehéros[i]=gWarrior(listehéros,liste_arme,3);
+                if (listehéros[i] == null) {
+                    if (i == 3) {
+                        ecriture(" warrior");
+                        listehéros[i] = new Hero();
                         a = false;
                         énoncé2.setVisible(false);
                         GHealer.setVisible(false);
                         GWarrior.setVisible(false);
                         GMAge.setVisible(false);
                         GHunter.setVisible(false);
-                        sur4.setVisible(false);
-                        quatre.setVisible(false);
+                        label2.setVisible(false);
+                        label1.setVisible(false);
                         sortieTav.setVisible(true);
                     }
                     if (i != 3) {
-                        listeclasse[i]="warrior";
-                        listehéros[i]=gWarrior(listehéros,liste_arme,i);
+                        listehéros[i] = new Hero();
                         a = false;
-                        if(i==2){
-                            trois.setVisible(false);
-                            quatre.setVisible(true);
+                        if (i == 2) {
+                            writeData("4", 740, 210, label2);
+                            ecriture(" warrior");
                         }
-                        if(i==1){
-                            deux.setVisible(false);
-                            trois.setVisible(true);
+                        if (i == 1) {
+                            writeData("3", 740, 210, label2);
+                            ecriture(" warrior");
                         }
-                        if(i==0){
-                            un.setVisible(false);
-                            deux.setVisible(true);
+                        if (i == 0) {
+                            writeData("2", 740, 210, label2);
+                            ecriture("\nwarrior");
                         }
                     }
                 }
-                i+=1;
+                i += 1;
             }
 
         }
@@ -742,14 +661,10 @@ public class ControllerTaverne extends Core {
 
     @FXML
     void entDungeon(MouseEvent event) throws IOException {
-        Stage stage= (Stage) sortieTav.getScene().getWindow();
-        Parent root= FXMLLoader.load(getClass().getResource("Dungeon.fxml"));
+        Stage stage = (Stage) sortieTav.getScene().getWindow(); //charge une nouvelle scene
+        Parent root = FXMLLoader.load(getClass().getResource("Dungeon.fxml"));
         stage.setScene(new Scene(root));
-        //System.out.println(Arrays.toString(liste_enemy));
-        //System.out.println(Arrays.toString(listehéros));
-        //System.out.println(Arrays.toString(listeclasse));
     }
-
 
 
 }

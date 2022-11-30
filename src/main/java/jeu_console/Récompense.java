@@ -104,14 +104,12 @@ public class Récompense {
 
                             recGE6(hero);
                             break;
-                        }
-                        else {
+                        } else {
 
                             sc.nextLine();
                             System.out.println("mauvais chiffre\n");
                         }
-                    }
-                    catch (Exception e) {
+                    } catch (Exception e) {
 
                         sc.nextLine();
                         System.out.println("donner un des chiffres disponibles\n");
@@ -201,14 +199,12 @@ public class Récompense {
 
                             recGE6(hero);
                             break;
-                        }
-                        else {
+                        } else {
 
                             sc.nextLine();
                             System.out.println("mauvais chiffre\n");
                         }
-                    }
-                    catch (Exception e) {
+                    } catch (Exception e) {
 
                         sc.nextLine();
                         System.out.println("donner un des chiffres disponibles\n");
@@ -222,7 +218,7 @@ public class Récompense {
                     System.out.println("Voici vos recompenses, veuillez en choisir une (numéro):");
                     try {
 
-                        System.out.println("(1) vous gagnez de la nourriture exquise (25 de pv) ");
+                        System.out.println("(1) vous gagnez de la nourriture exquise (50 de pv) ");
                         System.out.println("(2) votre chance augmente (+10 de chance) ");
                         System.out.println("(3) vous récupérez une potion de votre choix ");
 
@@ -298,14 +294,12 @@ public class Récompense {
 
                             recGE6(hero);
                             break;
-                        }
-                        else {
+                        } else {
 
                             sc.nextLine();
                             System.out.println("mauvais chiffre\n");
                         }
-                    }
-                    catch (Exception e) {
+                    } catch (Exception e) {
 
                         sc.nextLine();
                         System.out.println("donner un des chiffres disponibles\n");
@@ -404,7 +398,6 @@ public class Récompense {
     }//donne des pv max
 
 
-
     //récompense par classe
     public static void recWA1(Warrior hero) {
         Weapon arme_equip = hero.getInventaire_weapon()[hero.getWeapon_equipped()];
@@ -433,7 +426,6 @@ public class Récompense {
         arme_equip.setName("Excalibur");
         arme_equip.setType("feu");
         arme_equip.setType_degat(20);
-        arme_equip.setType("");
         System.out.println("vous gagnez " + arme_equip.getName() + " qui fait " + arme_equip.getBonus_degat() + " de dégat et faisant "
                 + arme_equip.getType_degat() + " dégat de type " + arme_equip.getType());
     } //t3

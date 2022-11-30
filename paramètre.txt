@@ -1,0 +1,6 @@
+nombre_héros
+1
+nombre ennemis
+1
+liste classe
+warrior

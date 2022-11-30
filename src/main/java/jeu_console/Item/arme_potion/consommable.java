@@ -12,15 +12,15 @@ import lombok.ToString;
 @ToString
 
 public class consommable extends item {
-    public static void main(String[] args) {
-
-    }
-
+    public Integer soin;
     private Integer bonus_degat;
     private Integer bonus_def;
     private String name;
-    public Integer soin;
     private String classe;
     private Integer mana;
+
+    public static void main(String[] args) {
+
+    }
 
 }

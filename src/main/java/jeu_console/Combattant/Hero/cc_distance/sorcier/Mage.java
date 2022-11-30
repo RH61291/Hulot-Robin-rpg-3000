@@ -2,7 +2,6 @@ package jeu_console.Combattant.Hero.cc_distance.sorcier;
 
 
 import jeu_console.Combattant.Hero.Hero;
-import jeu_console.Combattant.Hero.cc_distance.Warrior;
 import jeu_console.Item.arme_potion.Weapon;
 import jeu_console.Item.arme_potion.conso.Potion;
 import jeu_console.Item.arme_potion.consommable;
@@ -87,7 +86,7 @@ public class Mage extends Hero {
 
         double[] tab_dégat = new double[5];
         tab_dégat[0] = 0;
-        tab_dégat[1] =0; //feu
+        tab_dégat[1] = 0; //feu
         tab_dégat[2] = 0; //eau
         tab_dégat[3] = 0; //feuille
         tab_dégat[4] = damage; //terre
@@ -116,7 +115,7 @@ public class Mage extends Hero {
 
         double[] tab_dégat = new double[5];
         tab_dégat[0] = 0;
-        tab_dégat[1] =0; //feu
+        tab_dégat[1] = 0; //feu
         tab_dégat[2] = 0; //eau
         tab_dégat[3] = damage; //feuille
         tab_dégat[4] = 0; //terre
@@ -131,7 +130,7 @@ public class Mage extends Hero {
         return tab_dégat;
     }
 
-    public static Hero gMage(Hero[] heros, Weapon[] liste_arme, int i){
+    public static Hero gMage(Hero[] heros, Weapon[] liste_arme, int i) {
         heros[i] = new Mage();
         heros[i].setHealth(100);
         heros[i].setChance(20);
@@ -140,7 +139,7 @@ public class Mage extends Hero {
         heros[i].setDef(10);
         heros[i].setCurrent_def(heros[i].getDef());
         heros[i].setDegat_fond(heros[i].getDegat_base());
-        heros[i].setMagie(10);
+        heros[i].setMagie(14);
         heros[i].setCurrent_magie(heros[i].getMagie());
         heros[i].setType("feu");
 

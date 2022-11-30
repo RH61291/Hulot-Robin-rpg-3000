@@ -22,7 +22,7 @@ public class Combattant {
     private int soin_base;
     private int def;
     private int current_def;
-    private Integer nbfleche;
+    private int nbfleche;
     private int magie;
     private int current_magie;
     private String type;
